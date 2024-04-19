@@ -47,18 +47,73 @@
 }
 @include Responsive($DESTOP) {
   .col-xl-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 20%;
+    max-width: 20%;
   }
   .col-xl-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 55%;
+    max-width: 55%;
   }
 }
 @include Responsive($MEDIUM_DEVICE) {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%;
+  }
+}
+.header_logo {
+  padding: 15px 0;
+}
+.header_menu {
+  padding: 24px 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      position: relative;
+      a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #1c1c1c;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+        padding: 5px 0;
+        display: block;
+      }
+    }
+    li:hover .header_menu_dropdow {
+      opacity: 1;
+      visibility: visible;
+    }
+    .active a {
+      color: green;
+    }
+    .header_menu_dropdow {
+      background: #222222;
+      display: block;
+      position: absolute;
+      width: 180px;
+      z-index: 9;
+      padding: 5px 0;
+      transition: all, 0.3s;
+      opacity: 0;
+      visibility: hidden;
+
+      li {
+        a {
+          text-transform: capitalize;
+          color: #ffffff;
+          font-weight: 400;
+          padding: 5px 15px;
+        }
+        :hover {
+          color: green;
+        }
+      }
+    }
   }
 }
 .header_cart {
